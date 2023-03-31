@@ -1,6 +1,6 @@
 Name:		texlive-zhmetrics-uptex
 Version:	40728
-Release:	1
+Release:	2
 Summary:	Chinese font metrics for upTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zhmetrics-uptex
