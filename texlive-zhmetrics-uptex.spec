@@ -3,7 +3,7 @@ Version:	40728
 Release:	2
 Summary:	Chinese font metrics for upTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zhmetrics-uptex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zhmetrics-uptex
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.doc.r%{version}.tar.xz
