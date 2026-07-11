@@ -1,38 +1,22 @@
-Name:		texlive-zhmetrics-uptex
-Version:	40728
-Release:	2
+%global tl_name zhmetrics-uptex
+%global tl_revision 40728
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Chinese font metrics for upTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zhmetrics-uptex
+URL:		https://www.ctan.org/tex-archive/fonts/zhmetrics-uptex
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zhmetrics-uptex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package contains some Chinese font metrics (JFM, VF, etc)
-for upTeX engine, together with a simple DVIPDFMx font mapping
-of Fandol fonts for DVIPDFMx.
+The package contains some Chinese font metrics (JFM, VF, etc) for upTeX
+engine, together with a simple DVIPDFMx font mapping of Fandol fonts for
+DVIPDFMx.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/vf/public/zhmetrics-uptex
-%{_texmfdistdir}/fonts/tfm/public/zhmetrics-uptex
-%doc %{_texmfdistdir}/doc/fonts/zhmetrics-uptex
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
